@@ -1,0 +1,23 @@
+{% include 'EskoolyApp/sidebar.html' %}
+<div class="main">
+  {% if classes_list %}
+
+  <table class="table table-hover">
+    <tr>
+<th>NAME</th>
+<th>FEES</th>
+<th>UPDATE</th>
+<th>DELETE</th>
+</tr>
+{% for class_list in classes_list %}
+<tr>
+  <td><a href="/detail/{{class_list.id}}">{{class_list.name}}</td>
+  <td>{{class_list.monthly_fees}}</td>
+  <td><a href="/update/{{class_list.id}}">Update</a></td>
+  <td><a href="/delete/{{class_list.id}}">Delete</a></td>
+  </tr>
+  {%endfor%}
+  </table>
+
+  {%endif%}
+</div>

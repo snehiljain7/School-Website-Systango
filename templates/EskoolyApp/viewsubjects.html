@@ -1,0 +1,16 @@
+{% include 'EskoolyApp/sidebar.html' %}
+<div class="main">
+  <h1>Classes List:</h1><hr>
+  {% for class in classes %}
+  <h2>{{class.name}}</h2>
+  {% for subjects in class.subjects_set.all%}
+  <ul>
+    <li>Subject Name:{{subjects.sub_name}}</li>
+    <li>weightage: {{subjects.weightage}}</li>
+
+  </ul>
+  <a href="/updatesubject/{{subjects.id}}">Edit</a><br>
+  {%endfor%}
+
+  <a href="/addsubjects">Add</a>
+  {%endfor%}

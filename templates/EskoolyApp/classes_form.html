@@ -1,0 +1,26 @@
+{% include 'EskoolyApp/sidebar.html' %}
+<div class="main">
+<form method="post">
+    {% csrf_token %}
+  <!-- {{form.name}}<br>
+  {{form.monthly_fees}} -->
+  <!-- <input type="submit" name="Create" value="Create"> -->
+  <table class="table table-borderless">
+
+      <tbody>
+        <tr>
+          <td>Class Name</td>
+          <td>{{form.name}}</td>
+        </tr>
+        <tr>
+          <td>Monthly Fees</td>
+          <td>{{form.monthly_fees}}</td>
+        </tr>
+        <tr>
+          <td><input type="submit" class = "btn btn-primary" name="Create" value="Create/Update"></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+  </div>

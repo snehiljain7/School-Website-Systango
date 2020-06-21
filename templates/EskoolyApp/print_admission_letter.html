@@ -1,0 +1,43 @@
+{% include 'EskoolyApp/sidebar.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css" media="print">
+  body {visibility:hidden;}
+.print {visibility:visible;}
+</style>
+<div class="container col-lg-4 print">
+  {% if submitbutton == 'Search' and request.GET.q != '' %}
+  {% if results %}
+  <!-- <h1>Results for <b>{{ request.GET.q }}</b></h1> -->
+  <br/><br/>
+  {% for student in results %}
+<div class="card" style="width: 20rem;"><br>
+    <center><h5 class="card-title">&nbsp;&nbsp;Eskooly - Admission letter</h5><hr>  </center>
+    <div class="card-body">
+        <center>
+        <img src="{% static "images/student.png"%}" alt="student image" height="100px" width="100px" class="rounded-circle">
+      </div>
+
+<!-- class="card-img-top" -->
+
+  <ul class="list-group list-group-flush">
+    <center>
+    <li class="list-group-item">Name - {{student.name}}</li>
+    <li class="list-group-item">Reg no. - {{student.reg_no}}</li>
+    <li class="list-group-item">Class - {{student.name_of_class}}</li>
+    <li class="list-group-item">Mobile - {{student.mobile_no}}</li>
+    <li class="list-group-item">Address - {{student.address}}</li>
+    <li class="list-group-item"><button class="showprintbtn btn-primary" onclick="window.print()">Print Admission Letter</button></li>
+  </ul>
+  {% endfor %}
+  {% else %}
+  No search results for this query
+  {% endif %}
+  {% endif %}
+  <!-- <div class="card-body">
+    <a href="/admissionletter" class="btn btn-info" >Another student</a>
+  </div> -->
+
+</div><br><hr>

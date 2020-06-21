@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from EskoolyApp import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 #app_name=''
 
@@ -37,10 +39,14 @@ urlpatterns = [
     path('viewsubjects/', views.SubjectsView),
     path('addsubjects/', views.SubjectsAddView.as_view()),
     path('updatesubject/<pk>', views.SubjectsUpdateView.as_view()),
-    # path('register/',views.register,name='register'),
-    # path('registerStudent/',views.registerStudent,name='registerStudent'),
-    # path('registerTeacher/',views.registerTeacher,name='registerTeacher'),
-    # path('login/',views.userLogin,name='userLogin'),
-    # path('dashboard/',views.dashboard,name='dashboard'),
+    path('instituteinfo/<id>', views.view_institute_info),
+    path('addstudent/', views.StudentsAddView.as_view()),
+    path('viewstudents/', views.StudentsView, name = 'view_students'),
+    path('studentsdetail/<pk>',views.StudentsDetailView.as_view()),
+    path('updatestudents/<pk>',views.StudentsUpdateView.as_view()),
+    path('deletestudents/<pk>', views.StudentsDeleteView.as_view()),
+    path('admissionletter/', views.StudentAdmissionLetter),
+    path('printadmissionletter/', views.PrintAdmissionLetter),
 
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

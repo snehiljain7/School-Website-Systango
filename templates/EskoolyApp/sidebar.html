@@ -23,13 +23,14 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 60px;
+
 }
 
 /* Style the sidenav links and the dropdown button */
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 17px;
   color: #818181;
   display: block;
   border: none;
@@ -83,25 +84,26 @@ body {
 
 <div class="sidenav">
   <a href="#about"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
-  <a href="#services"><i class="fa fa-university" aria-hidden="true"></i> Institute Info</a>
+  <a href="/instituteinfo/1"><i class="fa fa-university" aria-hidden="true"></i> Institute Info</a>
 
   <button class="dropdown-btn"><i class="fa fa-align-justify" aria-hidden="true"></i> Classes
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="/listclass">All classes</a>
-    <a href="/create">New Class</a>
-    <a href="/listclass">Edit/Delete a class</a>
-    <a href="/viewsubjects">Classes To Subjects</a>
-    <a href="/addsubjects">Add Subjects</a>
+    <a href="/listclass"><i class="fa fa-users" aria-hidden="true"></i> All classes</a>
+    <a href="/create"><i class="fa fa-plus" aria-hidden="true"></i> New Class</a>
+    <a href="/listclass"><i class="fa fa-pencil" aria-hidden="true"></i> Edit/Delete a class</a>
+    <a href="/viewsubjects"><i class="fa fa-book" aria-hidden="true"></i> Classes To Subjects</a>
+    <a href="/addsubjects"><i class="fa fa-plus" aria-hidden="true"></i> Add Subjects</a>
   </div>
   <button class="dropdown-btn"><i class="fa fa-align-justify" aria-hidden="true"></i> Students
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="/viewstudents"><i class="fa fa-users" aria-hidden="true"></i> All Students</a>
+    <a href="/addstudent"><i class="fa fa-plus" aria-hidden="true"></i> New Student/Admission</a>
+    <a href="/viewstudents"><i class="fa fa-pencil" aria-hidden="true"></i> Edit/Delete A Student</a>
+    <a href="/admissionletter"><i class="fa fa-book" aria-hidden="true"></i> Admission Letter</a>
   </div>
   <button class="dropdown-btn"><i class="fa fa-align-justify" aria-hidden="true"></i> Employees
     <i class="fa fa-caret-down"></i>

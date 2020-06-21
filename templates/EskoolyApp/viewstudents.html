@@ -1,0 +1,31 @@
+{% include 'EskoolyApp/sidebar.html' %}
+{% load static %}
+<script src="https://use.fontawesome.com/0a087d3bc2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style media="screen">
+
+
+tr{
+ display:inline
+
+}
+
+</style>
+<div class="main">
+  <div class="container col-lg-12">
+    <table>
+      {% for student in students %}
+        <tr>
+          <td><img src = "{% static "images/student.png"%}" width = "100px" height="100px"><br>
+          {{student.reg_no}}  | {{student.name}}<br>
+          <center><a href="/studentsdetail/{{student.id}}"><i class="fa fa-search" aria-hidden="true"></i>
+          <a href="/updatestudents/{{student.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+          <a href="/deletestudents/{{student.id}}"><i class="fa fa-times" aria-hidden="true"></i></a></center>
+        </td>
+        
+          </tr>
+    {% endfor %}
+
+  </table>
+
+</div><br><br>

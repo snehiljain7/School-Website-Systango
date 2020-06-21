@@ -1,0 +1,23 @@
+{% include 'EskoolyApp/sidebar.html' %}
+<div class="main">
+<form method="post">
+    {% csrf_token %}
+  <!-- {{form.name}}<br>
+  {{form.monthly_fees}} -->
+  <!-- <input type="submit" name="Create" value="Create"> -->
+  <table class="table table-borderless">
+
+      <tbody>
+        Do You really want to delete this student {{students.name}}?
+        <tr>
+            <td><input type="submit" class = "btn btn-danger" name="Delete" value="Delete"></td>
+          <td><input type="submit" class = "btn btn-primary" name="Cancel" value="Cancel"></td>
+        </tr>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+  </div>

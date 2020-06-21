@@ -1,0 +1,38 @@
+{% include 'EskoolyApp/sidebar.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="container col-lg-4">
+
+<div class="card" style="width: 20rem;"><br>
+    <center><h5 class="card-title">&nbsp;&nbsp;Eskooly - Admission letter</h5><hr>  </center>
+    <div class="card-body">
+        <center>
+        <img src="{% static "images/student.png"%}" alt="student image" height="100px" width="100px" class="rounded-circle">
+      </div>
+
+<!-- class="card-img-top" -->
+
+  <ul class="list-group list-group-flush">
+    <center>
+    <li class="list-group-item">Name - {{students.name}}</li>
+    <li class="list-group-item">Reg no. - {{students.reg_no}}</li>
+    <li class="list-group-item">Class - {{students.name_of_class}}</li>
+    <li class="list-group-item">Mobile - {{students.mobile_no}}</li>
+    <li class="list-group-item">Address - {{students.address}}</li>
+    <li class="list-group-item">Admission Date - {{students.admission_date}}</li>
+    <li class="list-group-item">Discount - {{students.discount}}</li>
+    <li class="list-group-item">BirthDay - {{students.birthdate}}</li>
+    <li class="list-group-item">Orphan - {{students.orphan_student}}</li>
+    <li class="list-group-item">Gender - {{students.gender}}</li>
+    <li class="list-group-item">Caste - {{students.caste}}</li>
+    <li class="list-group-item">Religion - {{students.religion}}</li>
+    <li class="list-group-item">Previous Schools - {{students.previous_school}}</li>
+    <li class="list-group-item">Children - {{students.total_children}}</li>
+    <li class="list-group-item">Father Name - {{students.father_name}}</li>
+    <li class="list-group-item">Mother Name - {{students.mother_name}}</li>
+  </ul>
+  <!-- <div class="card-body">
+    <a href="/admissionletter" class="btn btn-info" >Another student</a>
+  </div> -->
+
+</div><br><hr>
